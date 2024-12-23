@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { PromptInput } from './PromptInput';
 import { GenerateButton } from './GenerateButton';
 import { ImageDisplay } from './ImageDisplay';

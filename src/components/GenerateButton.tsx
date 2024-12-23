@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface GenerateButtonProps {
   onClick: () => void;
   disabled: boolean;

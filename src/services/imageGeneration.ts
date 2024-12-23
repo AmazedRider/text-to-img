@@ -1,8 +1,10 @@
-import * as fal from '@fal-ai/serverless-client';
+import { fal } from '../config/falConfig';
 
-fal.config({
-  credentials: import.meta.env.VITE_FAL_KEY,
-});
+interface FalResponse {
+  images: Array<{
+    url: string;
+  }>;
+}
 
 export const generateImage = async (prompt: string): Promise<string> => {
   try {
@@ -12,7 +14,7 @@ export const generateImage = async (prompt: string): Promise<string> => {
         negative_prompt: 'blurry, bad quality, distorted',
         num_inference_steps: 50,
       },
-    });
+    }) as FalResponse;
 
     return result.images[0].url;
   } catch (error) {
